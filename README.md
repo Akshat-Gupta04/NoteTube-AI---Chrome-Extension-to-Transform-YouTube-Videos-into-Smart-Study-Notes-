@@ -335,15 +335,15 @@ notetube-ai/
 We welcome contributions! Here's how you can help make NoteTube AI even better:
 
 ### **Ways to Contribute**
-- 🐛 **Report Bugs**: Found an issue? [Open an issue](https://github.com/your-username/notetube-ai/issues)
-- 💡 **Suggest Features**: Have ideas? [Start a discussion](https://github.com/your-username/notetube-ai/discussions)
+- 🐛 **Report Bugs**: Found an issue? Report Issue
+- 💡 **Suggest Features**: Have ideas? Start discussion
 - 🔧 **Submit Code**: Fork, code, test, and submit a pull request
 - 📚 **Improve Docs**: Help make our documentation clearer
 - 🧪 **Test & Review**: Try new features and provide feedback
 
 ### **Development Setup**
 1. Fork the repository
-2. Clone your fork: `git clone https://github.com/your-username/notetube-ai.git`
+2. Clone your fork: 
 3. Load extension in Chrome (Developer mode)
 4. Make your changes
 5. Test thoroughly with various YouTube videos
