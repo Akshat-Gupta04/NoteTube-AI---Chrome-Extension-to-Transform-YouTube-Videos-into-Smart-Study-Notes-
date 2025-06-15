@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NoteTube AI - Settings</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <div class="popup-header">
+      <div class="header-content">
+        <svg class="logo" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+        </svg>
+        <h1>NoteTube AI</h1>
+      </div>
+      <div class="version">v1.0.0</div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="popup-content">
+      <!-- API Key Section -->
+      <div class="section">
+        <h2>OpenAI Configuration</h2>
+        <div class="form-group">
+          <label for="api-key">API Key</label>
+          <div class="input-group">
+            <input type="password" id="api-key" placeholder="Enter your OpenAI API key">
+            <button type="button" id="toggle-api-key" class="btn-icon" title="Show/Hide API Key">
+              👁️
+            </button>
+          </div>
+          <div class="help-text">
+            <a href="https://platform.openai.com/api-keys" target="_blank">Get your API key from OpenAI</a>
+          </div>
+          <div id="api-key-status" class="status-message"></div>
+        </div>
+      </div>
+
+      <!-- Settings Section -->
+      <div class="section">
+        <h2>Note Generation Settings</h2>
+
+        <div class="form-group">
+          <label for="summary-depth">Summary Depth</label>
+          <select id="summary-depth">
+            <option value="brief">Brief - Key points only</option>
+            <option value="medium">Medium - Balanced detail</option>
+            <option value="detailed">Detailed - Comprehensive notes</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="include-timestamps">
+            <span class="checkmark"></span>
+            Include timestamp references
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="auto-generate">
+            <span class="checkmark"></span>
+            Auto-generate notes when video loads
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label for="export-format">Default Export Format</label>
+          <select id="export-format">
+            <option value="markdown">Markdown (.md)</option>
+            <option value="text">Plain Text (.txt)</option>
+            <option value="pdf">PDF (.pdf)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Theme Section -->
+      <div class="section">
+        <h2>Appearance</h2>
+        <div class="form-group">
+          <label for="theme">Theme</label>
+          <select id="theme">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="auto">Auto (System)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Cache Management -->
+      <div class="section">
+        <h2>Cache Management</h2>
+        <div class="cache-info">
+          <div class="cache-stats">
+            <div class="stat">
+              <span class="stat-label">Cached Notes:</span>
+              <span id="cached-notes-count">-</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Storage Used:</span>
+              <span id="storage-usage">-</span>
+            </div>
+          </div>
+          <button type="button" id="clear-cache" class="btn-secondary">
+            Clear All Cache
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="popup-footer">
+      <div class="footer-buttons">
+        <button type="button" id="save-settings" class="btn-primary">
+          Save Settings
+        </button>
+        <button type="button" id="reset-settings" class="btn-secondary">
+          Reset to Defaults
+        </button>
+      </div>
+
+      <div class="footer-links">
+        <a href="#" id="help-link">Help & FAQ</a>
+        <a href="#" id="feedback-link">Send Feedback</a>
+      </div>
+    </div>
+
+    <!-- Status Messages -->
+    <div id="status-toast" class="status-toast hidden">
+      <div class="toast-content">
+        <span id="toast-message"></span>
+        <button id="toast-close" class="toast-close">×</button>
+      </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay hidden">
+      <div class="loading-spinner"></div>
+      <div class="loading-text">Saving settings...</div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

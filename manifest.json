@@ -1,0 +1,66 @@
+{
+  "manifest_version": 3,
+  "name": "NoteTube AI",
+  "version": "1.0.0",
+  "description": "Transform YouTube videos into smart study notes with AI. Extract key concepts, timestamps, and organized summaries from any educational content.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://youtube.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/watch*",
+        "https://youtube.com/watch*"
+      ],
+      "js": [
+        "config.js",
+        "transcript-extractor.js",
+        "ai-processor.js",
+        "storage-manager.js",
+        "export-manager.js",
+        "content.js"
+      ],
+      "css": [
+        "sidebar.css"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "YouTube Notes Converter",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "sidebar.html",
+        "sidebar.js",
+        "export-manager.js"
+      ],
+      "matches": [
+        "https://www.youtube.com/*",
+        "https://youtube.com/*"
+      ]
+    }
+  ]
+}
