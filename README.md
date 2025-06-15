@@ -64,7 +64,7 @@
 
 1. **Download NoteTube AI**
    ```bash
-   git clone https://github.com/your-username/notetube-ai.git
+   git clone https://github.com/Akshat-Gupta04/NoteTube-AI---Chrome-Extension-to-Transform-YouTube-Videos-into-Smart-Study-Notes-.git
    cd notetube-ai
    ```
 
